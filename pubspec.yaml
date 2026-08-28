@@ -18,7 +18,7 @@ environment:
 dependencies:
   hive: ^2.2.3
   queryx: ^0.1.0
-  sqlite3: ^2.4.6
+  sqlite3: ^2.7.6
 
 dev_dependencies:
   hive_test: ^1.0.1
@@ -30,3 +30,6 @@ topics:
   - hive
   - sqlite
   - caching
+  - storage
+  - CacheStorage
+  - localStorage

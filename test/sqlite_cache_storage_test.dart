@@ -16,9 +16,13 @@ void main() {
 
     test('write then read round-trips a value', () async {
       final storage = SqliteCacheStorage(db);
-      await storage.write('users', {'names': ['ada', 'linus']});
+      await storage.write('users', {
+        'names': ['ada', 'linus']
+      });
       final result = await storage.read('users');
-      expect(result, {'names': ['ada', 'linus']});
+      expect(result, {
+        'names': ['ada', 'linus']
+      });
     });
 
     test('read returns null for a missing key', () async {
@@ -42,7 +46,8 @@ void main() {
       expect(await storage.read('b'), {'x': 2});
     });
 
-    test('clear removes cached entries but preserves the version key', () async {
+    test('clear removes cached entries but preserves the version key',
+        () async {
       final storage = SqliteCacheStorage(db);
       await storage.writeVersion(5);
       await storage.write('a', {'x': 1});
@@ -65,7 +70,8 @@ void main() {
     test('two SqliteCacheStorage instances over the same db share the table',
         () async {
       final a = SqliteCacheStorage(db);
-      final b = SqliteCacheStorage(db); // CREATE TABLE IF NOT EXISTS is idempotent
+      final b =
+          SqliteCacheStorage(db); // CREATE TABLE IF NOT EXISTS is idempotent
       await a.write('shared', {'x': 1});
       expect(await b.read('shared'), {'x': 1});
     });

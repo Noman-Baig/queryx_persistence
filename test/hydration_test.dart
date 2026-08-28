@@ -94,7 +94,8 @@ void main() {
       );
 
       expect(client.getQueryData<TestUser>(key), isNull);
-      expect(await storage.read(key.id), isNull, reason: 'corrupt entry should be dropped');
+      expect(await storage.read(key.id), isNull,
+          reason: 'corrupt entry should be dropped');
     });
   });
 }

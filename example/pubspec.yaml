@@ -7,6 +7,7 @@ environment:
   sdk: ">=3.3.0 <4.0.0"
 
 dependencies:
+  sqlite3: ^2.7.6
   queryx_persistence:
     path: ../
 

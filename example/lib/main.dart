@@ -3,6 +3,7 @@
 // Uses the sqlite3 backend since it needs no Flutter/platform setup to run
 // here. Swap SqliteCacheStorage for HiveCacheStorage the same way — same
 // interface either way.
+// ignore_for_file: avoid_print
 
 import 'package:queryx_persistence/queryx_persistence.dart';
 import 'package:sqlite3/sqlite3.dart';
@@ -67,7 +68,8 @@ Future<void> main() async {
   );
 
   final users = await usersQuery.ensureFetched();
-  print('Fetched from network: $users (network calls so far: $networkCallCount)');
+  print(
+      'Fetched from network: $users (network calls so far: $networkCallCount)');
 
   // 3. Simulate a fresh app start: new QueryClient, same storage. Hydration
   //    now finds what step 2 persisted, with zero network calls.

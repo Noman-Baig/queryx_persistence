@@ -60,9 +60,10 @@ packages:
   queryx:
     dependency: transitive
     description:
-      path: "../../queryx"
-      relative: true
-    source: path
+      name: queryx
+      sha256: e76668c15d7c827c0edf066953e78ab09f55c9c473c06ef14b62fc1e07ae9ced
+      url: "https://pub.dev"
+    source: hosted
     version: "0.1.0"
   queryx_persistence:
     dependency: "direct main"
@@ -72,7 +73,7 @@ packages:
     source: path
     version: "0.1.0"
   sqlite3:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: sqlite3
       sha256: "3145bd74dcdb4fd6f5c6dda4d4e4490a8087d7f286a14dee5d37087290f0f8a2"

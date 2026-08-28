@@ -43,7 +43,8 @@ void main() {
 
       final result = await fetcher();
 
-      expect(result, 7, reason: 'a failing disk write must not surface as a fetch failure');
+      expect(result, 7,
+          reason: 'a failing disk write must not surface as a fetch failure');
     });
 
     test('composes with QueryClient like any other fetcher', () async {

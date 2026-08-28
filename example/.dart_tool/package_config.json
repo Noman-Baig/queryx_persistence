@@ -45,7 +45,7 @@
     },
     {
       "name": "queryx",
-      "rootUri": "../../../queryx",
+      "rootUri": "file:///Users/fixprob/.pub-cache/hosted/pub.dev/queryx-0.1.0",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
@@ -80,7 +80,7 @@
       "languageVersion": "3.3"
     }
   ],
-  "generated": "2026-08-28T07:11:58.671437Z",
+  "generated": "2026-08-28T10:04:19.117217Z",
   "generator": "pub",
   "generatorVersion": "3.7.2",
   "flutterRoot": "file:///Users/fixprob/development/flutter",

@@ -5,9 +5,13 @@ void main() {
   group('InMemoryCacheStorage', () {
     test('write then read round-trips a value', () async {
       final storage = InMemoryCacheStorage();
-      await storage.write('users', {'names': ['ada', 'linus']});
+      await storage.write('users', {
+        'names': ['ada', 'linus']
+      });
       final result = await storage.read('users');
-      expect(result, {'names': ['ada', 'linus']});
+      expect(result, {
+        'names': ['ada', 'linus']
+      });
     });
 
     test('read returns null for a missing key', () async {

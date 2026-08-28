@@ -17,10 +17,14 @@ void main() {
       final box = await Hive.openBox('queryx_cache_test');
       final storage = HiveCacheStorage(box);
 
-      await storage.write('users', {'names': ['ada', 'linus']});
+      await storage.write('users', {
+        'names': ['ada', 'linus']
+      });
       final result = await storage.read('users');
 
-      expect(result, {'names': ['ada', 'linus']});
+      expect(result, {
+        'names': ['ada', 'linus']
+      });
     });
 
     test('read returns null for a missing key', () async {
@@ -41,7 +45,8 @@ void main() {
       expect(await storage.read('b'), {'x': 2});
     });
 
-    test('clear removes cached entries but preserves the version key', () async {
+    test('clear removes cached entries but preserves the version key',
+        () async {
       final box = await Hive.openBox('queryx_cache_test_4');
       final storage = HiveCacheStorage(box);
       await storage.writeVersion(5);
@@ -52,7 +57,8 @@ void main() {
 
       expect(await storage.read('a'), isNull);
       expect(await storage.read('b'), isNull);
-      expect(await storage.readVersion(), 5, reason: 'clear() must not wipe the version key');
+      expect(await storage.readVersion(), 5,
+          reason: 'clear() must not wipe the version key');
     });
 
     test('version round-trips', () async {
