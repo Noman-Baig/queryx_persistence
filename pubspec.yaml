@@ -1,0 +1,32 @@
+name: queryx_persistence
+description: >
+  Persistent cache adapters for queryx — Hive and sqlite3 implementations of
+  CacheStorage, plus cache hydration on startup and write-through
+  persistence helpers.
+version: 0.1.0
+homepage: https://github.com/Noman-Baig
+repository: https://github.com/Noman-Baig/queryx_persistence
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
+# Pure Dart, like `queryx` and `queryx_dio` — neither Hive's core package
+# nor sqlite3's FFI bindings require Flutter, so this is unit-testable with
+# plain `dart test` and usable outside Flutter too. (Flutter apps just add
+# `path_provider` themselves to pick a real on-device file path — this
+# package doesn't need to know about that.)
+dependencies:
+  hive: ^2.2.3
+  queryx: ^0.1.0
+  sqlite3: ^2.4.6
+
+dev_dependencies:
+  hive_test: ^1.0.1
+  lints: ^4.0.0
+  test: ^1.25.0
+
+topics:
+  - persistence
+  - hive
+  - sqlite
+  - caching

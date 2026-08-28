@@ -1,0 +1,14 @@
+name: queryx_persistence_example
+description: Runnable example of queryx_persistence (sqlite3 backend).
+version: 0.0.1
+publish_to: none
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
+dependencies:
+  queryx_persistence:
+    path: ../
+
+dev_dependencies:
+  lints: ^4.0.0
